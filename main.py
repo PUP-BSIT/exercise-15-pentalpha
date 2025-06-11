@@ -1,5 +1,5 @@
 from os import system
-from pentalpha import bautista, managbanag, banzali
+from pentalpha import bautista, managbanag, banzali, raymundo
 
 while (True):
     system('cls')
@@ -35,8 +35,8 @@ while (True):
             adventure = managbanag.Adventure("Geralt", "Witcher", 30)
             adventure.menu()
         case 5:
-            # TODO: (Raymundo) Instance class from raymundo module
-            pass
+            book_1 = raymundo.Book("1984", "George Orwell", "Dystopian")
+            book_1.menu()
         case 0:
             print("Exiting...")
             break
