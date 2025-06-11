@@ -1,4 +1,5 @@
 from os import system
+from pentalpha import bautista
 
 while (True):
     system('cls')
@@ -20,8 +21,10 @@ while (True):
 
     match (menu_choice):
         case 1:
-            # TODO: (Bautista) Instance class from bautista module
-            pass
+            pokemon_1 = bautista.Pokemon("Pikachu", "Electric Mouse Pokemon", 
+                    "It stores electricity in its cheeks and use it to attack",
+                    "Electic")
+            pokemon_1.menu()
         case 2:
             # TODO: (Banzali) Instance class from banzali module
             pass
