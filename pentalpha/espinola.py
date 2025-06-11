@@ -11,6 +11,12 @@ class SimpleThermostat:
 
     def set_temp(self, new_temp):
         """Set target temperature"""
+        try:
+            new_temp= float(new_temp)
+        except ValueError:
+            print("Please enter a valid number.")
+            return 
+
         if 10 <= new_temp <= 30:
             self.current_temp = new_temp
             print(f"Temperature set to {new_temp}°C")
@@ -26,6 +32,7 @@ class SimpleThermostat:
     def change_mode(self, new_mode):
         """Switch between heat/cool/off"""
         new_mode = new_mode.lower()
+        
         if new_mode in ["heat", "cool", "off"]:
             self.mode = new_mode
             print(f"Mode set to {new_mode}")
@@ -34,12 +41,10 @@ class SimpleThermostat:
 
     def status(self):
         """Display current settings"""
-        print(
-            "\nSTATUS:\n",
-            f"Temperature: {self.current_temp}°C\n",
-            f"Power: {'ON' if self.is_on else 'OFF'}\n",
-            f"Mode: {self.mode.upper()}\n"
-        )
+        print("\nSTATUS:\n")
+        print(f"Temperature: {self.current_temp}°C\n")
+        print(f"Power: {'ON' if self.is_on else 'OFF'}")
+        print(f"Mode: {self.mode.upper()}")
     
     def show_fahrenheit(self):
         """Displays the current temperature in Fahrenheit"""
@@ -76,11 +81,8 @@ class SimpleThermostat:
         """Processes the user's choice from the menu"""
         match choice:
             case 1:
-                try:
-                    temp = float(input("Enter temperature (10-30°C): "))
-                    self.set_temp(temp)
-                except ValueError:
-                    print("Please enter a valid number.")
+                temp = input("Enter temperature (10-30°C): ")
+                self.set_temp(temp)
             case 2:
                 self.toggle_power()
             case 3:
