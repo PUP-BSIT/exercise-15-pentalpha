@@ -18,13 +18,11 @@ class Adventure:
             (
                 "What has keys but can't open locks?",
                 "piano"
-            ),
-            (
+            ),(
                 "I speak without a mouth and hear without ears."
                 " What am I?",
                 "echo"
-            ),
-            (
+            ),(
                 "What can travel around the world while staying"
                 " in a corner?",
                 "stamp"
@@ -85,7 +83,11 @@ class Adventure:
         """Offer a one-line adventure prompt."""
         location = self.fake.city()
         creature = self.fake.random_element([
-            "dragon", "goblin", "phoenix", "kraken", "wizard"
+            "dragon", 
+            "goblin", 
+            "phoenix", 
+            "kraken", 
+            "wizard"
         ])
         item = self.fake.random_element([
             "ancient amulet", "mystic sword",
