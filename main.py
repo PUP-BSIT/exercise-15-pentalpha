@@ -1,5 +1,5 @@
 from os import system
-from pentalpha import bautista, managbanag, banzali, raymundo
+from pentalpha import bautista, managbanag, banzali, raymundo, espinola
 
 while (True):
     system('cls')
@@ -29,8 +29,8 @@ while (True):
             driver = banzali.Formula1("Sergio Perez", "Red Bull", "Mexican")
             driver.menu()
         case 3:
-            # TODO: (Espinola) Instance class from espinola module
-            pass
+            thermo = espinola.SimpleThermostat()
+            thermo.menu()
         case 4:
             adventure = managbanag.Adventure("Geralt", "Witcher", 30)
             adventure.menu()
