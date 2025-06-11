@@ -1,5 +1,5 @@
 from os import system
-from pentalpha import bautista, managbanag
+from pentalpha import bautista, managbanag, banzali
 
 while (True):
     system('cls')
@@ -26,15 +26,14 @@ while (True):
                     "Electic")
             pokemon_1.menu()
         case 2:
-            # TODO: (Banzali) Instance class from banzali module
-            pass
+            driver = banzali.Formula1("Sergio Perez", "Red Bull", "Mexican")
+            driver.menu()
         case 3:
             # TODO: (Espinola) Instance class from espinola module
             pass
         case 4:
             adventure = managbanag.Adventure("Geralt", "Witcher", 30)
             adventure.menu()
-            pass
         case 5:
             # TODO: (Raymundo) Instance class from raymundo module
             pass
