@@ -26,6 +26,7 @@ class Book:
             print(f"Title changed to '{self.title}'.")
         else:
             print("Invalid title! Please enter alphabetic characters only.")
+        
         input("\nPress Any Key to continue...")
 
     def change_author(self):
@@ -37,6 +38,7 @@ class Book:
             print(f"Author changed to '{self.author}'.")
         else:
             print("Invalid author! Please enter alphabetic characters only.")
+        
         input("\nPress Any Key to continue...")
 
     def change_genre(self):
@@ -48,12 +50,13 @@ class Book:
             print(f"Genre changed to '{self.genre}'.")
         else:
             print("Invalid genre! Please enter alphabetic characters only.")
+        
         input("\nPress Any Key to continue...")
 
     def summary(self):
         """Show a short summary of the book."""
-        print(f"'{self.title}' is a {self.genre} book"
-              + "written by {self.author}.")
+        print(f"'{self.title}' is a {self.genre} book",
+                "written by {self.author}.")
         input("\nPress Any Key to continue...")
 
     def menu(self):
@@ -61,9 +64,11 @@ class Book:
         choice = UNSET_OPTION
         while choice != EXIT_OPTION:
             choice = self.display_menu_choice()
+
             if choice == EXIT_OPTION:
                 print("Exiting Book Manager...")
                 break
+            
             self.process_choice(choice)
 
     def display_menu_choice(self):
