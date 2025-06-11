@@ -1,5 +1,8 @@
 from os import system
 
+EXIT_OPTION = 0
+UNSET_OPTION = -1
+
 class Pokemon:
     def __init__(self, name, nickname, description, type_1="None", 
                 type_2="None"):
@@ -68,6 +71,55 @@ class Pokemon:
         
         self.nickname = new_nickname
         self.description = new_description
+
+    def menu(self):
+        """ Handles the menu and processes user choices """
+        choice = UNSET_OPTION
+        while(choice != EXIT_OPTION):
+            choice = self.display_menu_choice()
+            self.process_choice(choice)
+           
+    def display_menu_choice(self):
+        """ Displays the menu and returns the user's choice """
+        system('cls')
+        print("Pokemon Creator ")
+        print("[1] - Inspect Pokemon")
+        print("[2] - Change Name")
+        print("[3] - Change Typing")
+        print("[4] - Listen to Pokemon Cry")
+        print("[5] - Change Pokedex Entry")
+        print("[0] - Exit")
+
+        try:
+            choice = int(input("Enter Choice: "))
+        except ValueError:
+            print("Please enter a valid number!")
+            return UNSET_OPTION
+        
+        return choice 
+    
+    def process_choice(self, choice):
+        """ Processes the user's choice based from the menu """
+        match choice:
+            case 1:
+                self.inspect()
+            case 2:
+                self.change_name()
+            case 3:
+                self.change_types()
+            case 4:
+                self.listen()
+            case 5:
+                self.change_pokedex()
+            case 0:
+                print("Exiting...")
+                return EXIT_OPTION
+            case _:
+                print("Invalid choice: Please choose from 0-5")
+        
+        input("Press Any Key to continue...")
+
+        
 
 
     
