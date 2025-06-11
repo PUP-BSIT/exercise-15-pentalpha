@@ -14,20 +14,20 @@ class Adventure:
 
     def tell_riddle(self):
         """Present a random riddle and check the answer."""
-        riddles = [
-            (
+        riddles = [(
                 "What has keys but can't open locks?",
                 "piano"
-            ),(
+            ),
+            (
                 "I speak without a mouth and hear without ears."
                 " What am I?",
                 "echo"
-            ),(
+            ),
+            (
                 "What can travel around the world while staying"
                 " in a corner?",
                 "stamp"
-            ),
-        ]
+            ),]
         question, answer = self.fake.random_element(riddles)
         print(f"\nRiddle: {question}")
         response = input("Answer: ").strip().lower()
