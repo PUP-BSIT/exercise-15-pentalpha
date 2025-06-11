@@ -1,5 +1,5 @@
 from os import system
-from pentalpha import bautista
+from pentalpha import bautista, managbanag
 
 while (True):
     system('cls')
@@ -32,7 +32,8 @@ while (True):
             # TODO: (Espinola) Instance class from espinola module
             pass
         case 4:
-            # TODO: (Managbanag) Instance class from managbanag module
+            adventure = managbanag.Adventure("Geralt", "Witcher", 30)
+            adventure.menu()
             pass
         case 5:
             # TODO: (Raymundo) Instance class from raymundo module
